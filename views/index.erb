@@ -1,11 +1,22 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Web Guesser</title>
-  </head>
-  <body>
-    <h1>Web Guesser</h1>
-    <p><%= @number %></p>
-  </body>
-</html>
+
+
+<form class="input-group input-group-sm my-2 mx-auto w-25">
+  <input type="text" class="form-control" placeholder="#" aria-label="" aria-describedby="basic-addon1" name="guess">
+  <div class="input-group-append">
+    <input type="submit" value="Guess!" class="btn btn-success">
+  </div>
+  <div class="input-group-append">
+    <input type="submit" name="reset" value="Reset" class="btn btn-danger ">
+  </div>
+  <div class="input-group-append">
+    <input type="submit" name="cheat" value="Cheat" class="btn btn-warning">
+  </div>
+</form>
+
+<h2><%= @message %></h2>
+<h2><%= @guess %></h2>
+<div class="my-1"><% @@guesses.each do |guess| %>
+  <span class="badge badge-secondary"> <%= guess %> </span>
+<% end %></div>
+
+<h4>Number of guesses left: <%= @@guess_limit %></h4>
